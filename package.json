@@ -1,0 +1,26 @@
+{
+  "name": "dev-challenge",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^7",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js-community/odata-v2-adapter": "^1.12.3",
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^7"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "cds": {
+    "requires": {},
+    "cov2ap": {
+      "path": "devchallenge/v2"
+    }
+  }
+}
