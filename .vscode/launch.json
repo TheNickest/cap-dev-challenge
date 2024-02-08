@@ -10,7 +10,9 @@
       "args": [
         "serve",
         "--with-mocks",
-        "--in-memory?"
+        "--in-memory?",
+        "--port",
+        "5005"
       ],
       "skipFiles": [
         "<node_internals>/**"
