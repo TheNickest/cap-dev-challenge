@@ -6,6 +6,7 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@cap-js/graphql": "^0.10.0",
     "@sap/cds": "^7",
     "express": "^4"
   },
