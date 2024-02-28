@@ -7,5 +7,4 @@ service AdminService @(requires: 'admin') {
   annotate Books with {
     title @changelog;
   };
-
 }
