@@ -6,6 +6,7 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@cap-js/change-tracking": "^1.0.5",
     "@cap-js/graphql": "^0.10.0",
     "@sap/cds": "^7",
     "express": "^4"
@@ -19,7 +20,9 @@
     "start": "cds-serve"
   },
   "cds": {
-    "requires": {},
+    "requires": {
+      "auth": "dummy"
+    },
     "cov2ap": {
       "path": "devchallenge/v2"
     }
