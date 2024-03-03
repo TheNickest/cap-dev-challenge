@@ -1,27 +1,27 @@
-using { CatalogService } from '../../srv/cat-service.cds';
+using {CatalogService} from '../../srv/cat-service.cds';
 
 ////////////////////////////////////////////////////////////////////////////
 //
 //	Books Object Page
 //
-annotate CatalogService.Books with @(UI : {
-    HeaderInfo: {
+annotate CatalogService.Books with @(UI: {
+    HeaderInfo       : {
         TypeName      : 'Book',
         TypeNamePlural: 'Books',
-        Description   : {Value : author}
+        Description   : {Value: author}
     },
-    HeaderFacets: [{
+    HeaderFacets     : [{
         $Type : 'UI.ReferenceFacet',
         Label : '{i18n>Description}',
         Target: '@UI.FieldGroup#Descr'
     }, ],
-    Facets: [{
+    Facets           : [{
         $Type : 'UI.ReferenceFacet',
         Label : '{i18n>Details}',
         Target: '@UI.FieldGroup#Price'
     }, ],
-    FieldGroup #Descr: {Data : [{Value : descr}, ]},
-    FieldGroup #Price: {Data : [
+    FieldGroup #Descr: {Data: [{Value: descr}, ]},
+    FieldGroup #Price: {Data: [
         {Value: price},
         {
             Value: currency.symbol,
@@ -34,13 +34,13 @@ annotate CatalogService.Books with @(UI : {
 //
 //	Books List Page
 //
-annotate CatalogService.Books with @(UI : {
+annotate CatalogService.Books with @(UI: {
     SelectionFields: [
         ID,
         price,
         currency_code
     ],
-    LineItem: [
+    LineItem       : [
         {
             Value: ID,
             Label: '{i18n>Title}'
@@ -52,5 +52,10 @@ annotate CatalogService.Books with @(UI : {
         {Value: genre.name},
         {Value: price},
         {Value: currency.symbol},
-    ]
+    ],
+    Identification : [{
+        $Type : 'UI.DataFieldForAction',
+        Action: 'CatalogService.EntityContainer/submitOrder',
+        Label : '{i18n>Submit Order}'
+    }],
 });

@@ -1,10 +1,10 @@
 using {sap.capire.bookshop as my} from '../db/schema';
 
-annotate my.Books with @PersonalData      : {
+annotate my.Authors with @PersonalData      : {
     DataSubjectRole: 'Author',
     EntitySemantics: 'DataSubject'
 } {
-    ID        @PersonalData.FieldSemantics: 'DataSubjectID';
-    author    @PersonalData.IsPotentiallyPersonal;
-    createdBy @PersonalData.IsPotentiallyPersonal;
+    ID          @PersonalData.FieldSemantics: 'DataSubjectID';
+    dateOfBirth @PersonalData.IsPotentiallySensitive;
+    createdBy   @PersonalData.IsPotentiallyPersonal;
 };
