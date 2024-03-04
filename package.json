@@ -6,8 +6,11 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@cap-js/audit-logging": "^0.6.0",
     "@cap-js/change-tracking": "^1.0.5",
     "@cap-js/graphql": "^0.10.0",
+    "@cap-js/notifications": "^0.1.0",
+    "@cap-js/telemetry": "^0.0.4",
     "@sap/cds": "^7",
     "express": "^4"
   },
